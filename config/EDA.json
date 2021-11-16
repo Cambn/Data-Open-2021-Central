@@ -1,1 +1,7 @@
-{"EDA_VIZ_PATH":"./visualization/EDA", "RESP_PATH":"data/us_chronic_resp_disease.csv", "TB_US_PATH":"data/tobacco_use_us.csv"}
+{"EDA_VIZ_PATH":"./visualization/EDA", 
+ "RESP_PATH":"data/us_chronic_resp_disease.csv", 
+ "TB_US_PATH":"data/tobacco_use_us.csv",
+ "DR_PATH":"data/death_rates_smoking_age.csv",
+ "SALES_PATH":"data/sales_per_day.csv",
+ "PRODUCTION_PATH":"data/tobacco_production.csv"
+}
