@@ -3,5 +3,8 @@
  "TB_US_PATH":"data/tobacco_use_us.csv",
  "DR_PATH":"data/death_rates_smoking_age.csv",
  "SALES_PATH":"data/sales_per_day.csv",
- "PRODUCTION_PATH":"data/tobacco_production.csv"
+ "PRODUCTION_PATH":"data/tobacco_production.csv",
+ "TBC_WW_PATH": "data/tobacco_use_ww.csv",
+ "POLICY_PATH": "data/stop_smoking.csv",
+ "PRODUCTION_PATH": "data/tobacco_production.csv"
 }
