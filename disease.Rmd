@@ -1,0 +1,18 @@
+---
+title: "diseace"
+output: pdf_document
+---
+
+```{r}
+disease <- read.csv("us_chronic_resp_disease.csv")
+print(levels(factor(disease$location_name)))
+
+State <- read.csv("states.csv")
+State_list <- State$State
+
+s <- disease[disease$location_name %in% State_list,]
+
+unique(s$location_name)
+```
+
+

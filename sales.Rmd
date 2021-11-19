@@ -1,0 +1,11 @@
+---
+title: "Sales"
+output: pdf_document
+---
+
+```{r}
+sales <- read.csv("sales_per_day.csv")
+print(levels(factor(sales$Entity)))
+```
+
+

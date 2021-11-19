@@ -1,0 +1,12 @@
+---
+title: "Policy"
+output: pdf_document
+---
+
+```{r}
+policy <- read.csv("stop_smoking.csv")
+
+a <- policy[policy$Entity == "United States",]
+
+```
+

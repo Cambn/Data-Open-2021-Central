@@ -1,0 +1,69 @@
+---
+title: "tobacco_production"
+output: pdf_document
+---
+
+```{r}
+library(tidyverse)
+#t_production <- read.csv("tobacco_production.csv")
+t_use_ww <- read.csv("tobacco_use_ww.csv")
+t_use_us <- read.csv("tobacco_use_us.csv")
+
+```
+
+```{r}
+summary(t_use_us)
+summary(factor(t_use_us$Topic))
+summary(factor(t_use_us$Question))
+```
+
+```{r}
+Turkey <- t_use_ww[t_use_ww$Location == "Turkey",]
+Brazil <- t_use_ww[t_use_ww$Location == "Brazil",]
+```
+
+```{r}
+Turkey_pivot <- Turkey %>% pivot_wider(names_from = Gender,values_from = Value)
+Brazil_pivot <- Brazil %>% pivot_wider(names_from = Gender,values_from = Value)
+```
+
+```{r}
+print(levels(factor(t_use_us$Question)))
+print(levels(factor(t_use_us$Topic)))
+```
+
+```{r}
+a <- t_use_us[t_use_us$Topic == "Smokeless Tobacco",]
+levels(factor(a$Break_Out_Category))
+```
+
+```{r}
+b <- t_use_us[t_use_us$Topic == "Smoker Status",]
+b_age <- b[b$Break_Out_Category == "Age Group",]
+b_edu <- b[b$Break_Out_Category == "Education Attained",]
+b_g <- b[b$Break_Out_Category == "Gender",]
+b_income <- b[b$Break_Out_Category == "Household Income",]
+b_overall <- b[b$Break_Out_Category == "Overall",]
+b_race <- b[b$Break_Out_Category == "Race/Ethnicity",]
+levels(factor(b$Break_Out_Category))
+```
+
+```{r}
+c <- t_use_us[t_use_us$Topic == "Current Smoker Status",]
+
+b[b$Locationabbr]
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+---
+title: "Untitled"
+output: pdf_document
+---
+
+```{r}
+t_production <- read.csv("tobacco_production.csv")
+print(levels(factor(t_production$Country.or.Area)))
+```
+```{r}
+t_production[t_production$Country.or.Area == 'Brazil',]
+```

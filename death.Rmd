@@ -1,0 +1,56 @@
+---
+title: "Untitled"
+output: pdf_document
+---
+
+```{r}
+library(ggplot2)
+death_rate <- read.csv("death_rates_smoking_age.csv")
+```
+
+
+```{r}
+death_rate[death_rate$Code == "",2] <- NA
+death_rate1 <- death_rate[!is.na(death_rate$Code),]
+death_rate2 <- death_rate[is.na(death_rate$Code),]
+u_entity <- unique(death_rate2$Entity)
+for(i in 1:length(u_entity)){
+  dat <- death_rate2[death_rate2$Entity == u_entity[i],]
+  #+geom_point()+
+    #geom_point(dat$X50_69,color = "red") + geom_point(dat$X15_49,color = "blue")+
+    #geom_point(dat$X70_plus,color = "yellow")
+  #ymin <- min(min(dat$All_ages),min(dat$X50_69),min(dat$X15_49),min(dat$X70_plus))
+  #ymax <- max(max(dat$All_ages),max(dat$X50_69),max(dat$X15_49),max(dat$X70_plus))
+  plot(dat$Year,dat$All_ages,main = u_entity[i])#,#ylim = c(ymin,ymax))
+  #points(dat$Year,dat$X50_69,col = "blue")
+  #points(dat$Year,dat$X15_49,col = "green")
+  #points(dat$Year,dat$X70_plus,col = "purple")
+}
+
+
+#ggplot(death_rate2,aes(x = Year,y = All_ages,color = Entity))+
+#    geom_point()
+```
+
+
+```{r}
+u_cat <- unique(death_rate1$Entity)
+for(i in c("Brazil","Turkey")){
+  dat <- death_rate1[death_rate1$Entity == i,]
+  #ymin <- min(min(dat$All_ages),min(dat$X50_69),min(dat$X15_49),min(dat$X70_plus))
+  #ymax <- max(max(dat$All_ages),max(dat$X50_69),max(dat$X15_49),max(dat$X70_plus))
+  plot(dat$Year,dat$All_ages,main = i)#,ylim = c(ymin,ymax))
+  #points(dat$Year,dat$X50_69,col = "blue")
+  #points(dat$Year,dat$X15_49,col = "green")
+  #points(dat$Year,dat$X70_plus,col = "purple")
+}
+
+```
+
+
+
+```{r}
+dat <- death_rate1[death_rate1$Entity == "United States",]
+plot(dat$Year,dat$All_ages,main = "United States")
+
+```
